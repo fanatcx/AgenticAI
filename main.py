@@ -5,6 +5,9 @@ from google import genai
 from google.genai import types
 
 def main():
+    current_dir = os.getcwd()
+    print(f"Current directory: {current_dir}")
+
     load_dotenv()
     api_key = os.environ.get("GEMINI_API_KEY")
     client = genai.Client(api_key=api_key)
