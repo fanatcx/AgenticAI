@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
+# Note to self. Always switch to .venv in the terminal before making changes
+
 def main():
     current_dir = os.getcwd()
     print(f"Current directory: {current_dir}")
