@@ -1,26 +1,21 @@
 # denote the directory with "."
 # this file is being run from the root dir of our project. You only need a relative name
 # fyi current dir is a dot
-from functions.get_files_info import get_files_info
+from functions.get_file_content import get_file_content
 
 
 def test():
-    result = get_files_info("calculator", ".")
-    print("Result for current directory:")
-    print(result)
-    print("")
+    output = get_file_content("calculator", "main.py")
+    print(output)
 
-    result = get_files_info("calculator", "pkg")
-    print("Result for 'pkg' directory:")
-    print(result)
+    output = get_file_content("calculator", "pkg/calculator.py")
+    print(output)
 
-    result = get_files_info("calculator", "/bin")
-    print("Result for '/bin' directory:")
-    print(result)
+    output = get_file_content("calculator", "/bin/cat")
+    print(output)
 
-    result = get_files_info("calculator", "../")
-    print("Result for '../' directory:")
-    print(result)
+    output = get_file_content("calculator", "pkg/does_not_exist.py")
+    print(output)
 
 
 if __name__ == "__main__":
