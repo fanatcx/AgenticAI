@@ -1,4 +1,5 @@
 import os
+from google.genai import types
 
 def write_file(working_directory, file_path, content):
     # Step 1: Resolve absolute paths
@@ -27,3 +28,21 @@ def write_file(working_directory, file_path, content):
 
     except Exception as e:
         return f'Error: {e}'
+
+schema_write_file = types.FunctionDeclaration(
+    name="write_file",
+    description="Write the content to the file at the file path",
+    parameters=types.Schema(
+        type=types.Type.OBJECT,
+        properties={
+            "file_path": types.Schema(
+                type=types.Type.STRING,
+                description="The file path to the file we want to write to.",
+            ),
+            "content": types.Schema(
+                type=types.Type.STRING,
+                description="The content to write to the file in the file_path"
+            )
+        },
+    ),
+)
