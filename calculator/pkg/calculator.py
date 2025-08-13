@@ -1,4 +1,5 @@
 # calculator.py
+import re
 
 class Calculator:
     def __init__(self):
@@ -9,7 +10,7 @@ class Calculator:
             "/": lambda a, b: a / b,
         }
         self.precedence = {
-            "+": 1,
+            "+": 1, # The ai fixed this.
             "-": 1,
             "*": 2,
             "/": 2,
@@ -18,7 +19,8 @@ class Calculator:
     def evaluate(self, expression):
         if not expression or expression.isspace():
             return None
-        tokens = expression.strip().split()
+        tokens = re.findall(r"(\d+\.?\d*)|([+\-*/()])", expression)
+        tokens = [token for match in tokens for token in match if token]
         return self._evaluate_infix(tokens)
 
     def _evaluate_infix(self, tokens):

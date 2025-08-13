@@ -144,7 +144,7 @@ All paths should be relative to the working directory. Do not include the workin
     user_prompt = " ".join(user_args)
     messages = [types.Content(role="user", parts=[types.Part(text=user_prompt)])]
 
-    MAX_ITERS = 8
+    MAX_ITERS = 15
     iters = 0
 
     while True:
