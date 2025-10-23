@@ -7,5 +7,4 @@ This project explores:
 - Reasoning loops
 - AI-driven code improvement
 
-> ⚠️ This was a learning project — expect rough edges and unrefined code.  
-> Completed as part of Boot.dev’s “Build an AI Agent in Python” course.
+
